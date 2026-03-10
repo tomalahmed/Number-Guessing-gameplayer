@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Hunt Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="bg-layer bg-layer--one"></div>
+      <div class="bg-layer bg-layer--two"></div>
+
+      <main class="game-wrapper" aria-label="Number guessing game">
+        <section class="game-card" aria-labelledby="game-title">
+          <header class="game-header">
+            <div class="title-block">
+              <h1 id="game-title">Lost Digit Hunt</h1>
+              <p class="subtitle">
+                Guess the hidden number in as few attempts as you can. Choose a difficulty to change the range,
+                hints, and scoring.
+              </p>
+            </div>
+
+            <div class="difficulty-row">
+              <div class="field-group">
+                <label for="difficultySelect" class="field-label">Difficulty</label>
+                <select id="difficultySelect" class="select">
+                  <option value="easy">Easy · 1–50</option>
+                  <option value="normal" selected>Normal · 1–100</option>
+                  <option value="hard">Hard · 1–500</option>
+                </select>
+              </div>
+              <p id="rangeLabel" class="range-label" aria-live="polite"></p>
+            </div>
+          </header>
+
+          <section class="game-main">
+            <div class="input-row">
+              <label for="guessInput" class="sr-only">Enter your guess</label>
+              <input
+                id="guessInput"
+                type="number"
+                inputmode="numeric"
+                autocomplete="off"
+                class="input"
+                placeholder="Enter a number…"
+              />
+              <button id="guessButton" class="btn btn-primary" type="button">Guess</button>
+            </div>
+
+            <p
+              id="result"
+              class="status status-neutral"
+              role="status"
+              aria-live="polite"
+            >
+              Make your first guess.
+            </p>
+          </section>
+
+          <section class="game-stats" aria-label="Game stats">
+            <div class="stat">
+              <span class="stat-label">Attempts</span>
+              <span class="stat-value" id="attemptCount">0</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Best score</span>
+              <span class="stat-value" id="bestScore">-</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Last hint</span>
+              <span class="stat-value stat-value--hint" id="hint">-</span>
+            </div>
+          </section>
+
+          <section class="game-history" aria-label="Guess history">
+            <div class="history-header">
+              <h2 class="history-title">Guess history</h2>
+              <span class="history-caption">Most recent on the right</span>
+            </div>
+            <div id="history" class="history-chips">
+              <span class="chip">No guesses yet</span>
+            </div>
+          </section>
+
+          <footer class="game-footer">
+            <button id="resetButton" class="btn btn-secondary" type="button">
+              New round
+            </button>
+          </footer>
+        </section>
+      </main>
+    </div>
+
+
+
+  </body>
+</html>

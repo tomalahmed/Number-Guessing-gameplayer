@@ -1,0 +1,13 @@
+/* Global styles: */
+* {
+    box-sizing: border-box;
+}
+
+
+
+body{
+    font-family: 'Work Sans', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
