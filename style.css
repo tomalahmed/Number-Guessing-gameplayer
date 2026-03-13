@@ -1,19 +1,19 @@
 /* Global styles: */
 
 :root {
-	--bg-deep: #f1e8d8;
-	--bg-soft: #e2d4bf;
-	--card-ivory: #fffdf8;
-	--card-cream: #75a1b4;
-	--ink: #2f2316;
-	--ink-soft: #5b4831;
-	--gold: #b48a45;
-	--gold-deep: #8a642d;
-	--line: rgba(123, 91, 47, 0.25);
+	--bg-deep: #f5ecde;
+	--bg-soft: #d8e6df;
+	--card-ivory: #fffdf9;
+	--card-cream: #eef7f3;
+	--ink: #2f2419;
+	--ink-soft: #5f5144;
+	--gold: #83623a;
+	--gold-deep: #3c7566;
+	--line: rgba(105, 85, 56, 0.25);
 	--success: #276749;
 	--danger: #9b2c2c;
-	--shadow-lg: 0 24px 45px rgba(66, 44, 19, 0.24);
-	--shadow-sm: 0 10px 20px rgba(66, 44, 19, 0.12);
+	--shadow-lg: 0 22px 44px rgba(56, 42, 23, 0.2);
+	--shadow-sm: 0 9px 18px rgba(56, 42, 23, 0.1);
 }
 
 * {
@@ -24,13 +24,14 @@
 
 body{
     font-family: 'Work Sans', sans-serif;
-    background-color: #f0f0f0;
+    background-color: var(--bg-deep);
     margin: 0;
     padding: 0;
     color: var(--ink);
 	background:
-		radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.55), transparent 40%),
-		radial-gradient(circle at 80% 20%, rgba(255, 239, 205, 0.65), transparent 40%),
+		radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.58), transparent 44%),
+		radial-gradient(circle at 82% 14%, rgba(189, 233, 213, 0.42), transparent 42%),
+		radial-gradient(circle at 50% 100%, rgba(198, 172, 126, 0.22), transparent 46%),
 		linear-gradient(120deg, var(--bg-deep), var(--bg-soft));
 	overflow-x: hidden;
 }
@@ -57,25 +58,27 @@ body{
 .bg-layer--one {
 	background: conic-gradient(
 		from 180deg,
-		rgba(180, 138, 69, 0.15),
-		rgba(255, 255, 255, 0.12),
-		rgba(140, 108, 55, 0.16),
-		rgba(180, 138, 69, 0.15)
+		rgba(131, 98, 58, 0.16),
+		rgba(236, 250, 242, 0.12),
+		rgba(53, 110, 94, 0.14),
+		rgba(131, 98, 58, 0.16)
 	);
-	animation: drift 28s linear infinite;
+	filter: blur(6px);
+	animation: drift 42s linear infinite;
 }
 
 .bg-layer--two {
 	background:
 		repeating-linear-gradient(
 			-45deg,
-			rgba(110, 76, 34, 0.055) 0,
-			rgba(110, 76, 34, 0.055) 4px,
+			rgba(60, 99, 86, 0.06) 0,
+			rgba(60, 99, 86, 0.06) 4px,
 			transparent 4px,
-			transparent 15px
+			transparent 17px
 		);
-	mix-blend-mode: multiply;
-	animation: drift-reverse 34s linear infinite;
+	mix-blend-mode: soft-light;
+	filter: blur(1px);
+	animation: drift-reverse 58s linear infinite;
 }
 
 .game-wrapper {
@@ -116,7 +119,7 @@ body{
 	font-family: 'Cinzel', 'Times New Roman', serif;
 	letter-spacing: 0.04em;
 	font-size: clamp(1.8rem, 2.8vw, 2.7rem);
-	color: #3f2d17;
+	color: #3b2f22;
 }
 
 .subtitle {
@@ -222,14 +225,14 @@ body{
 	margin: 0.95rem 0 0;
 	padding: 0.72rem 0.88rem;
 	border-radius: 10px;
-	background: rgba(255, 252, 243, 0.9);
-	border: 1px dashed rgba(126, 92, 51, 0.4);
-	color: #58442d;
+	background: rgba(255, 252, 245, 0.92);
+	border: 1px dashed rgba(115, 91, 58, 0.38);
+	color: #5f4b37;
 	animation: pulse-soft 2.4s ease-in-out infinite;
 }
 
 .status-neutral {
-	border-color: rgba(126, 92, 51, 0.4);
+	border-color: rgba(115, 91, 58, 0.38);
 }
 
 .status-win {
