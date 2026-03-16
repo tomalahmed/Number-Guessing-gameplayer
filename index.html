@@ -19,6 +19,23 @@
 
       <main class="game-wrapper" aria-label="Number guessing game">
         <section class="game-card" aria-labelledby="game-title">
+          <aside class="tips" aria-label="How to play">
+            <button
+              class="tips-trigger"
+              type="button"
+              aria-label="How to play"
+              aria-describedby="tipsContent"
+            >
+              i
+            </button>
+            <div id="tipsContent" class="tips-content" role="tooltip">
+              <h2 class="tips-title">How to play</h2>
+              <p>Pick a difficulty and enter a number in that range.</p>
+              <p>Follow the hint after each guess to move higher or lower.</p>
+              <p>Find the exact number in as few attempts as possible.</p>
+            </div>
+          </aside>
+
           <header class="game-header">
             <div class="title-block">
               <p class="eyebrow">Mission Console</p>

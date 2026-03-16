@@ -90,6 +90,76 @@ body {
     backdrop-filter: blur(3px);
 }
 
+.tips {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+.tips-trigger {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(72, 217, 255, 0.44);
+    background: rgba(7, 18, 37, 0.9);
+    color: var(--cyan);
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: help;
+    transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.tips-trigger:hover,
+.tips-trigger:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(72, 217, 255, 0.78);
+    box-shadow: 0 0 0 3px rgba(72, 217, 255, 0.18);
+    outline: none;
+}
+
+.tips-content {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: min(320px, calc(100vw - 3rem));
+    border-radius: 12px;
+    border: 1px solid rgba(72, 217, 255, 0.35);
+    background: rgba(8, 20, 40, 0.96);
+    color: #d9edff;
+    padding: 0.72rem 0.82rem;
+    box-shadow: var(--shadow-sm);
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.tips:hover .tips-content,
+.tips:focus-within .tips-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tips-title {
+    margin: 0 0 0.35rem;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.84rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a8eaff;
+}
+
+.tips-content p {
+    margin: 0.32rem 0;
+    line-height: 1.35;
+    color: var(--ink-muted);
+}
+
 .game-card::before {
     content: "";
     position: absolute;
@@ -504,6 +574,15 @@ body {
     .game-card {
         border-radius: 18px;
         padding: 1rem;
+    }
+
+    .tips {
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+
+    .tips-content {
+        right: -0.2rem;
     }
 
     .subtitle {
