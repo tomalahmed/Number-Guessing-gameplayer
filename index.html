@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
   </head>
@@ -21,10 +21,10 @@
         <section class="game-card" aria-labelledby="game-title">
           <header class="game-header">
             <div class="title-block">
+              <p class="eyebrow">Mission Console</p>
               <h1 id="game-title">Lost Digit Hunt</h1>
               <p class="subtitle">
-                Guess the hidden number in as few attempts as you can. Choose a difficulty to change the range,
-                hints, and scoring.
+                Scan the numeric field and lock onto the hidden signal. Fewer attempts means a higher score.
               </p>
             </div>
 
@@ -42,6 +42,10 @@
           </header>
 
           <section class="game-main">
+            <div class="console-banner" aria-hidden="true">
+              <span class="console-dot"></span>
+              <span class="console-text">Target signal unstable. Enter a probe value.</span>
+            </div>
             <div class="input-row">
               <label for="guessInput" class="sr-only">Enter your guess</label>
               <input
@@ -61,7 +65,7 @@
               role="status"
               aria-live="polite"
             >
-              Make your first guess.
+              Awaiting first probe.
             </p>
           </section>
 
@@ -80,6 +84,17 @@
             </div>
           </section>
 
+          <section class="zone-panel" aria-label="Search zone tracker">
+            <div class="zone-header">
+              <h2 class="zone-title">Search Zone Tracker</h2>
+              <span id="zoneWidth" class="zone-width">-</span>
+            </div>
+            <p class="zone-range">Possible range: <strong id="zoneRange">-</strong></p>
+            <div class="zone-track" aria-hidden="true">
+              <div id="zoneWindow" class="zone-window"></div>
+            </div>
+          </section>
+
           <section class="game-history" aria-label="Guess history">
             <div class="history-header">
               <h2 class="history-title">Guess history</h2>
@@ -91,8 +106,11 @@
           </section>
 
           <footer class="game-footer">
+            <button id="soundToggle" class="btn btn-ghost" type="button" aria-pressed="false">
+              Sound: On
+            </button>
             <button id="resetButton" class="btn btn-secondary" type="button">
-              New round
+              Restart mission
             </button>
           </footer>
         </section>
